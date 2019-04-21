@@ -1,4 +1,4 @@
-package sample;
+package LoginWindow;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,12 +8,17 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Scene LoginScene;
+    public static Stage LoginStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+        LoginStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
+        LoginScene = new Scene(root, 500, 300);
+        LoginStage.setTitle("User Login");
+        LoginStage.setScene(LoginScene);
+        LoginStage.show();
     }
 
 
